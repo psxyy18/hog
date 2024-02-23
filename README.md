@@ -17,16 +17,21 @@ To play the game or contribute to its development, start by cloning this reposit
 ```bash
 git clone https://github.com/psxyy18/hog.git
 cd hog
+```
 
 Requirements
 Ensure you have Python 3.x installed on your system. You can download it from python.org.
 
 Running the Game
 Execute the following command in the terminal:
+```bash
 python3 hog.py
+```
 
 For a more interactive experience, launch the graphical user interface:
+```bash
 python3 hog_gui.py
+```
 Development
 This project is structured into multiple phases, each adding complexity and features to the game:
 
