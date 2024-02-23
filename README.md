@@ -3,7 +3,7 @@
 ## Introduction
 In this project, I've developed a simulator and multiple strategies for the dice game Hog, implementing a blend of control statements and higher-order functions. The game allows two players to alternate turns, aiming to be the first to reach or exceed 100 total points.
 
-![Game of Hog](icon(1).gif
+![Game of Hog](pic.png)
 
 ### Rules
 - **Pig Out**: If any dice outcomes are 1, the current player's score for the turn is 1.
