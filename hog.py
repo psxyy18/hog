@@ -140,22 +140,23 @@ def play(strategy0, strategy1, score0=0, score1=0, dice=six_sided,
             num_rolls = strategy0(score0,score1)
             this_round_score = take_turn(num_rolls, score1, dice)
             score0 += this_round_score
-            if feral_hogs == True:
-                if num_rolls == last_score0+2 or num_rolls == last_score0-2:
-                    score0 += 3
+            if feral_hogs and abs(num_rolls - last_score0) == 2:
+                score0 += 3
             last_score0 = this_round_score
-            if is_swap(score0, score1):
-                score0, score1 = score1, score0
         else:
             num_rolls = strategy1(score1,score0)
             this_round_score = take_turn(num_rolls, score0, dice)
             score1 += this_round_score
-            if feral_hogs == True:
-                if num_rolls == last_score1+2 or num_rolls == last_score1-2:
-                    score1 +=3
+            if feral_hogs and abs(num_rolls - last_score1) == 2:
+                score1 +=3
             last_score1 = this_round_score
-            if is_swap(score1, score0):
-                score0, score1 = score1, score0
+
+        if is_swap(score1, score0):
+            score0, score1 = score1, score0
+
+        if say:
+            say = say(score0, score1)
+
         who = 1 - who
     return score0, score1
     # END PROBLEM 5
