@@ -300,7 +300,12 @@ def make_averaged(original_function, trials_count=1000):
     3.0
     """
     # BEGIN PROBLEM 8
-    "*** YOUR CODE HERE ***"
+    def averaged_function(*arg):
+        total = 0
+        for _ in range(trials_count):
+            total += original_function(*arg)
+        return total / trials_count
+    return averaged_function
     # END PROBLEM 8
 
 
