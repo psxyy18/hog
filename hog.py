@@ -411,7 +411,16 @@ def final_strategy(score, opponent_score):
     *** YOUR DESCRIPTION HERE ***
     """
     # BEGIN PROBLEM 12
-    return 6  # Replace this statement
+    base_strategy = swap_strategy(score, opponent_score, cutoff = 8, num_rolls = 6)
+
+    if score + free_bacon(opponent_score) >= 100:
+        return 0
+    elif score +roll_dice(1, six_sided) >= 100:
+        return 1
+    elif score + roll_dice(2, six_sided) >= 100:
+        return 2
+
+    return base_strategy
     # END PROBLEM 12
 
 ##########################
